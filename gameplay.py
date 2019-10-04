@@ -33,8 +33,7 @@ def get_input():
       for i in range(len(stacks)):
         if user_input == choices[i]:
         	return stacks[i]
-      
-    
+          
 #Play the Game
 num_user_moves = 0
 while right_stack.get_size() != num_disks:
@@ -51,12 +50,12 @@ while right_stack.get_size() != num_disks:
     elif to_stack == None or from_stack.peek().get_value() < to_stack.peek().get_value():
       disk = from_stack.pop()
       to_stack.push(disk)
-      num_user_movers += 1
+      num_user_moves += 1
       break
     else:
       print("\n\nInvalid Move. Try Again")
 
-print("\n\nYou completed the game in {0} moves, and the optimal number of moves is {1}", num_user_moves, num_optimal_moves)      
+print(f"\n\nYou completed the game in {num_user_moves} moves, and the optimal number of moves is {num_optimal_moves}")      
 
 
 

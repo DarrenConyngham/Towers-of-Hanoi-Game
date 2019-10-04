@@ -14,7 +14,7 @@ class Stack:
       self.top_item = item
       self.size += 1
     else:
-      print("No more room!")
+      print("There is no more space in the stack.")
 
   def pop(self):
     if self.size > 0:
@@ -22,12 +22,12 @@ class Stack:
       self.top_item = item_to_remove.get_next_node()
       self.size -= 1
       return item_to_remove.get_value()
-    print("This stack is totally empty.")
+    print("The stack is empty.")
 
   def peek(self):
     if self.size > 0:
       return self.top_item.get_value()
-    print("Nothing to see here!")
+    print("There is nothing in the stack.")
 
   def has_space(self):
     return self.limit > self.size
@@ -48,4 +48,4 @@ class Stack:
       print_list.append(pointer.get_value())
       pointer = pointer.get_next_node()
     print_list.reverse()
-    print("{0} Stack: {1}".format(self.get_name(), print_list))
+    print(f"{self.get_name()} Stack: {print_list}")
